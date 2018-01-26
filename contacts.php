@@ -99,6 +99,17 @@ Template Name: Шаблон для страницы Контакты
                                     </div>
                                 </div>
                             </div>
+                                                      <div class="b-contacts__address-info-main-item">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-5 col-xs-12">
+                                        <span class="fa fa-fax"></span>
+                                        ФАКС
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-xs-12">
+                                        <em><a href="tel:<?php the_field('fax',6); ?>"><?php the_field('fax',6); ?></a></em>
+                                    </div>
+                                </div>
+                            </div>
                         </address>
                     </div>
                 </div>

@@ -4,9 +4,9 @@
     <div class="row">
         <h1 class="wow zoomInLeft" data-wow-delay="0.7s"><?php the_title();?></h1>
         <?php if( get_field('flag_feedback') ): ?>
-            <div class="b-pageHeader__search wow zoomInRight" data-wow-delay="0.7s">
-                <h3><?php the_title();?></h3>
-            </div>
+        <div class="b-pageHeader__search wow zoomInRight" data-wow-delay="0.7s">
+            <h3><?php the_field('text_feedback'); ?></h3>
+        </div>
         <?php endif; ?>
     </div>
 </section><!--b-pageHeader-->
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="b-detail__head-price">
-                        <div class="b-detail__head-price-num"><?php the_field('hotel-cost'); ?> руб.</div>
+                        <div class="b-detail__head-price-num"><?php the_field('hotel-cost'); ?> </div>
                         <p><?php the_field('sub-price-text'); ?></p>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
         </header>
         <div class="b-detail__main">
             <div class="row">
-                <div class="col-md-8 col-xs-12">
+                <div class="col-md-12 col-xs-12">
                     <div class="b-detail__main-info">
                         <div class="b-detail__main-info-images wow zoomInUp" data-wow-delay="0.5s">
                             <div class="row m-smallPadding">

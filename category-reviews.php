@@ -23,14 +23,14 @@
             <div class="col-md-12 col-xs-12">
                 <div class="b-article__main">
 
-                    <?php $i = 0; $id=14;
+                    <?php $i = 0; $id=14; $paged = get_query_var( 'paged', 1 ); $count_items = 12;
                     $arg_posts =  array(
                         'orderby'      => 'modified',
                         'order'        => 'ASC',
                         'cat' => $id,
-                        'showposts'=>$n
+//                            'showposts'=>$n
                     );
-                    $recent = new WP_Query($arg_posts);
+                    $recent = new WP_Query( "cat=$id&posts_per_page=$count_items&paged=$paged" );
 
                     while($recent->have_posts()) : $recent->the_post(); ?>
                     <div class="b-article__main-author wow zoomInUp" data-wow-delay="0.5s">

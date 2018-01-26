@@ -1061,6 +1061,8 @@ body{
 
 .b-items__cell-info a.btn.m-btn{
     color: #545454;
+    position: absolute;
+    bottom: 15px;
 }
 
 .b-items__cell-info a.btn.m-btn:hover{

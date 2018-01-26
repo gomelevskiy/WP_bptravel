@@ -447,6 +447,11 @@
 
 /*600-767*/
 @media screen and (max-width:767px){
+    img {
+        width: 100%;
+        height: inherit;
+        margin: 10px 0;
+    }
     .begin-desct__flag {
         display: none;
     }
@@ -786,6 +791,11 @@
 
 /*480-599*/
 @media screen and (max-width:599px){
+    img {
+        width: 100%;
+        height: inherit;
+        margin: 10px 0;
+    }
     .begin-desct__flag {
         display: none;
     }
@@ -1113,6 +1123,12 @@
 
 /*320-479*/
 @media screen and (max-width:479px){
+
+    img {
+        width: 100%;
+        height: inherit;
+        margin: 10px 0;
+    }
 
     .travel-container {
         overflow: hidden;

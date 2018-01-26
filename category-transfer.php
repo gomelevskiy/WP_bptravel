@@ -18,14 +18,14 @@
                 <div class="col-lg-12 col-sm-12 col-xs-12">
                     <div class="row">
 
-                        <?php $i = 0; $id=6;
+                        <?php $i = 0; $id=6; $paged = get_query_var( 'paged', 1 ); $count_items = 12;
                         $arg_posts =  array(
                             'orderby'      => 'modified',
                             'order'        => 'ASC',
                             'cat' => $id,
-                            'showposts'=>$n
+//                            'showposts'=>$n
                         );
-                        $recent = new WP_Query($arg_posts);
+                        $recent = new WP_Query( "cat=$id&posts_per_page=$count_items&paged=$paged" );
 
                         while($recent->have_posts()) : $recent->the_post(); ?>
                         <div class="col-lg-4 col-md-6 col-xs-12">
@@ -41,7 +41,7 @@
                                     <div class="row m-smallPadding">
                                         <?php if(has_tag()){the_tags('<div class="col-xs-12 text-dop"><div class="meta-tags">','','</div></div>');}?>
                                         <div class="col-xs-6">
-                                            <h5 class="b-items__cell-info-price"><?php the_field('cost'); ?> руб.</h5>
+                                            <h5 class="b-items__cell-info-price"><?php the_field('cost'); ?> </h5>
                                         </div>
                                         <div class="col-xs-6">
                                             <a href="<?php the_permalink() ?>" class="btn m-btn">ПОДРОБНЕЕ<span class="fa fa-angle-right"></span></a>

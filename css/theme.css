@@ -5,7 +5,7 @@
  - Loader
 
 -------------------------------------------------------------------*/
-
+.text-cut p {margin: 0;}
 /* Global */
 a:focus{
     outline:none;
@@ -13,6 +13,10 @@ a:focus{
 
 body{
     overflow-x: hidden;
+}
+
+.b-items__cell-info-km .fa-tachometer {
+    
 }
 
 .s-relative{
@@ -127,6 +131,27 @@ body{
 a:hover {
     text-decoration: none !important;
 }
+
+.dropdown-menu.h-lang {
+  position: absolute;
+  z-index: 999;
+  float: inherit;
+}
+
+.b-topBar, .b-nav, .b-nav__logo, .b-nav__list {
+	position: relative;
+  z-index: 1;
+}
+
+.b-topBar {
+	z-index: 30;
+}
+
+.b-nav__logo-img {
+	position: relative;
+  z-index: 20;
+}
+
 
 .img-hidden {
     height: 240px;

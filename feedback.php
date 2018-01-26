@@ -56,9 +56,24 @@ Template Name: Шаблон для страницы c формой
                 </header>
                 <p class=" wow zoomInUp" data-wow-delay="0.5s">Отправьте ваше сообщение нам если у вас есть информация, которую стоило бы нам сообщить</p>
                 <div id="success"></div>
-                <form id="contactForm" novalidate class="s-form wow zoomInUp" data-wow-delay="0.5s">
+                <div id="contactForm" novalidate class="s-form wow zoomInUp" data-wow-delay="0.5s">
+<!--                    <div class="s-relative">-->
+<!--                        <select name="user-topic" id="user-topic" class="m-select">-->
+<!--                            <option value="Not select">Дата</option>-->
+<!--                            <option value="Topic 1">TOPIC 1</option>-->
+<!--                            <option value="Topic 2">TOPIC 2</option>-->
+<!--                            <option value="Topic 3">TOPIC 3</option>-->
+<!--                            <option value="Topic 4">TOPIC 4</option>-->
+<!--                        </select>-->
+<!--                        <span class="fa fa-caret-down"></span>-->
+<!--                    </div>-->
+<!--                    <input type="text" placeholder="Ваше имя" value="" name="user-name" id="user-name" />-->
+<!--                    <input type="text" placeholder="Телефон" value="" name="user-phone" id="user-phone" />-->
+<!--                    <input type="text" placeholder="Электронная почта" value="" name="user-email" id="user-email" />-->
+<!--                    <textarea id="user-message" name="user-message" placeholder="Комментарий"></textarea>-->
+<!--                    <button type="submit" class="btn m-btn">Оформить<span class="fa fa-angle-right"></span></button>-->
                     <?php the_field('feedback'); ?>
-                </form>
+                </div>
             </div>
         </div>
     </div>

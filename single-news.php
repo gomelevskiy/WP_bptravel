@@ -4,9 +4,9 @@
     <div class="row">
         <h1 class="wow zoomInLeft" data-wow-delay="0.7s"><?php the_title();?></h1>
         <?php if( get_field('flag_feedback') ): ?>
-            <div class="b-pageHeader__search wow zoomInRight" data-wow-delay="0.7s">
-                <h3>Оформи приглашение онлайн</h3>
-            </div>
+        <div class="b-pageHeader__search wow zoomInRight" data-wow-delay="0.7s">
+            <h3><?php the_field('text_feedback'); ?></h3>
+        </div>
         <?php endif; ?>
     </div>
 </section><!--b-pageHeader-->
@@ -87,7 +87,13 @@
                                         ?>
                                             <div class="b-article__main-related-item wow zoomInUp" data-wow-delay="0.5s">
                                                 <div class="row m-smallPadding">
-                                                    <div class="col-xs-4">
+                                                    <style>
+                                                        .img-container img {
+                                                            width: 100%;
+                                                            height: inherit;
+                                                        }
+                                                    </style>
+                                                    <div class="col-xs-4 img-container">
                                                         <?php the_post_thumbnail('thumbnail'); ?>
                                                     </div>
                                                     <div class="col-xs-8">
@@ -109,7 +115,7 @@
                         </div>
                     </div>
 
-                    <?php $id=14; $n=1; $recent = new WP_Query("cat=$id&showposts=$n"); while($recent->have_posts()) : $recent->the_post(); ?>
+<!--                     <?php $id=14; $n=1; $recent = new WP_Query("cat=$id&showposts=$n"); while($recent->have_posts()) : $recent->the_post(); ?>
 
                         <?php if( get_field('favourite_review') ): ?>
                             <div class="b-article__main-author wow zoomInUp" data-wow-delay="0.5s">
@@ -131,7 +137,7 @@
                             </div>
                         <?php endif; ?>
 
-                    <?php endwhile; ?>
+                    <?php endwhile; ?> -->
 
                     <?php comments_template(); ?>
                     

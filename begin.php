@@ -32,6 +32,12 @@ Template Name: Начальный экран
 </head>
 <body class="m-index" data-scrolling-animations="true" data-equal-height=".b-auto__main-item">
     <div class="begin-desct">
+        <script type="text/javascript" src="https://russiatourism.ru/operators/widget/js/widget.js"></script>
+        <!-- Russiatourism.ru Widget -->
+        <div style="position: absolute; z-index: 88; left: 0; right: 0; text-align: center;" id="russiatourism_widget"></div>
+        <script type="text/javascript">
+            RT.Widget.build('%D0%A0%D0%A2%D0%9E+016823');
+        </script>
         <div class="begin-desct__flag">
             <img src="<?php bloginfo('template_directory'); ?>/images/backgrounds/flag.png"/>
             <div class="begin-desct__col-roud-flag">Куда вы хотите<br/> направиться?</div>

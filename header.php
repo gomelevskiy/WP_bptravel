@@ -13,7 +13,7 @@
     }
     ?>" />
 
-    <title><?php bloginfo('name'); ?><?php '||' . wp_title(); ?></title>
+    <title><?php bloginfo('name'); ?> <?php '||' . wp_title(); ?></title>
 
     <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico" />
     <link href="<?php bloginfo('template_directory'); ?>/css/master.css" rel="stylesheet">

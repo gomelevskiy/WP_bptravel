@@ -2032,6 +2032,7 @@ a.m-langLink{
 
 .b-footer__content{
     float:right;
+    text-align: right;
 }
 
 .b-footer__content-social{

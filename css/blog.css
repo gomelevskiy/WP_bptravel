@@ -298,7 +298,8 @@
 }
 
 .b-blog__posts-one  p{
-    font: 300 13px 'Open Sans',sans-serif;
+    font-family: Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
+    font-size: 16px;
     margin: 0 0 50px 0;
     line-height:1.2;
 }

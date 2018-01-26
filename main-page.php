@@ -17,7 +17,7 @@ Template Name: Шаблон для главной страницы
                         <h2><?php the_field('s1_article',179); ?></h2>
                         <p><?php the_field('s1_name',179); ?>
                             <?php if( get_field('s1_price',179) ): ?>
-                                <span><?php the_field('s1_price',179); ?> руб.</span>
+                                <span><?php the_field('s1_price',179); ?> </span>
                             <?php endif; ?>
                         </p>
                         <a class="btn m-btn" href="<?php the_field('s1_link',179); ?>">Подробнее<span class="fa fa-angle-right"></span></a>
@@ -32,7 +32,7 @@ Template Name: Шаблон для главной страницы
                         <h2><?php the_field('s2_article',179); ?></h2>
                         <p><?php the_field('s2_name',179); ?>
                             <?php if( get_field('s2_price',179) ): ?>
-                                <span><?php the_field('s2_price',179); ?> руб.</span>
+                                <span><?php the_field('s2_price',179); ?> </span>
                             <?php endif; ?>
                         </p>
                         <a class="btn m-btn" href="<?php the_field('s2_link',179); ?>">Подробнее<span class="fa fa-angle-right"></span></a>
@@ -47,7 +47,7 @@ Template Name: Шаблон для главной страницы
                         <h2><?php the_field('s3_article',179); ?></h2>
                         <p><?php the_field('s3_name',179); ?>
                             <?php if( get_field('s3_price',179) ): ?>
-                                <span><?php the_field('s3_price',179); ?> руб.</span>
+                                <span><?php the_field('s3_price',179); ?> </span>
                             <?php endif; ?>
                         </p>
                         <a class="btn m-btn" href="<?php the_field('s3_link',179); ?>">Подробнее<span class="fa fa-angle-right"></span></a>
@@ -69,10 +69,9 @@ Template Name: Шаблон для главной страницы
         <div class="row">
             <?php
             $id= 7; // ID заданной рубрики
-            $n= 4;   // количество выводимых записей
-            $recent = new WP_Query("cat=$id&showposts=$n");
+            $recent = new WP_Query("cat=$id");
             while($recent->have_posts()) : $recent->the_post();
-                ?>
+            ?>
                 <?php if( get_field('view-in-main') ): ?>
                 <div class="col-sm-6 col-xs-12">
                     <a href="<?php the_permalink() ?>">
@@ -102,18 +101,18 @@ Template Name: Шаблон для главной страницы
                         <div class="row">
                             <?php
                             $id= 7; // ID заданной рубрики
-                            $n= 6;   // количество выводимых записей
-                            $recent = new WP_Query("cat=$id&showposts=$n");
+//                            $n= 6;   // количество выводимых записей
+                            $recent = new WP_Query("cat=$id");
                             while($recent->have_posts()) : $recent->the_post();
                             ?>
-                                <?php if( get_field('best') ): ?>
+                            <?php if( get_field('best-ekskursion') ): ?>
                                     <div class="col-md-4 col-sm-12">
                                         <div class="b-auto__main-item wow zoomInUp" data-wow-delay="0.3s">
                                             <img class="img-responsive center-block"  src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" />
                                             <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
                                             <div class="b-auto__main-item-info">
                                                 <span class="m-price">
-                                                    <?php the_field('cost'); ?> руб.
+                                                    <?php the_field('cost'); ?>
                                                 </span>
                                             </div>
                                             <?php if(has_tag()){the_tags('<div class="b-featured__item-links m-auto">','','</div>');}?>
@@ -122,6 +121,7 @@ Template Name: Шаблон для главной страницы
                                             </div>
                                         </div>
                                     </div>
+
                                 <?php endif; ?>
                             <?php endwhile; ?>
                         </div>

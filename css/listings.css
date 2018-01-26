@@ -615,7 +615,8 @@ select.m-select + span.fa{
     border: 1px solid #eeeeee;
     padding-bottom: 25px;
     margin-bottom: 40px;
-    /*height: 557px;*/
+    height: 557px;
+    position: relative;
 }
 
 .m-listTable .b-items__cars-one-img{

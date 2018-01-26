@@ -6,7 +6,7 @@ if ( function_exists( 'add_theme_support' ) ) add_theme_support( 'post-thumbnail
 add_action( 'pre_get_posts', 'mayak_category_announcement' );
 
 /* function pagination */
-//function wp_corenavi() {
+function wp_corenavi() {
 //    global $wp_query;
 //    $pages = '';
 //    $max = $wp_query->max_num_pages;
@@ -25,7 +25,7 @@ add_action( 'pre_get_posts', 'mayak_category_announcement' );
 //    if ($total == 1 && $max > 1) $pages = '<span class="pages">Страница ' . $current . ' из ' . $max . '</span>'."\r\n";
 //    echo '<li>' .$pages . paginate_links($a). '</li>';
 //    if ($max > 1) echo '</ul>';
-//}
+}
 
 // удаляет H2 из шаблона пагинации
 add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
@@ -329,14 +329,23 @@ function my_profile_new_fields_update(){
 
 // Filter
 function go_filter() { // наша функция
-    $args['tax_query'] = array('relation' => 'AND');
-
+	$args = array(); // подготовим массив
+	$args['meta_query'] = array('relation' => 'AND'); // отношение между условиями, у нас это "И то И это", можно ИЛИ(OR)
+	global $wp_query; // нужно заглобалить текущую выборку постов
 
 	if ($_GET['hotel-stars'] != '') { // если передана фильтрация по разделу
         $args['tax_query'][] = array(
-            'taxonomy'  => 'stars', // слаг таксономии, например category
-            'field'     => 'id', // по какому полю таксономии фильтровать можно slug или id
-            'terms' => $_POST['hotel-stars']
+              'taxonomy'  => 'stars', // слаг таксономии
+               'field'     => 'slug', // по полю slug
+               'terms' => 'sug_term', // слаг термина
+        );
+	}
+
+	if ($_GET['type-room'] != '') { // если передана фильтрация по разделу
+        $args['tax_query'][] = array(
+              'taxonomy'  => 'type-room', // слаг таксономии
+               'field'     => 'slug', // по полю slug
+               'terms' => 'sug_term', // слаг термина
         );
 	}
 
@@ -344,11 +353,13 @@ function go_filter() { // наша функция
 		if ($_GET['price_ot'] == '') $_GET['price_ot'] = 0; // если "Цена от" пустое, то значит от 0 и выше
 		if ($_GET['price_do'] == '') $_GET['price_do'] = 9999999; // если "Цена до" пустое, то будет до 9999999
 		$args['meta_query'][] = array( // пешем условия в meta_query
-			'key' => 'hotel-cost', // название произвольного поля
+			'key' => 'price', // название произвольного поля
 			'value' => array( (int)$_GET['price_ot'], (int)$_GET['price_do'] ), // переданные значения ОТ и ДО для интервала передаются в массиве
 			'type' => 'numeric', // тип поля - число
 			'compare' => 'BETWEEN' // тип сравнения, здесь это BETWEEN - т.е. между "Цены от" и до "Цены до"
 			);
 	}
 
+	query_posts(array_merge($args,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
 }
+

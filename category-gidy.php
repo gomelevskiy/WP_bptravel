@@ -18,14 +18,14 @@
         <h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">НАША КОМАНДА МЕЧТЫ</h2>
         <div class="row">
 
-            <?php $i = 0; $id=5;
+            <?php $i = 0; $id=5; $paged = get_query_var( 'paged', 1 ); $count_items = 12;
             $arg_posts =  array(
                 'orderby'      => 'modified',
                 'order'        => 'ASC',
                 'cat' => $id,
-                'showposts'=>$n
+//                            'showposts'=>$n
             );
-            $recent = new WP_Query($arg_posts);
+            $recent = new WP_Query( "cat=$id&posts_per_page=$count_items&paged=$paged" );
 
             while($recent->have_posts()) : $recent->the_post(); ?>
             <div class="col-md-4">
@@ -58,6 +58,12 @@
             </div>
             <?php $i++; endwhile; ?>
         </div>
+        <?php the_posts_pagination( array(
+            'prev_text' => "<span class='fa fa-angle-left'></span>",
+            'next_text' => "<span class='fa fa-angle-right'></span>",
+            'end_size' => 2,
+            'mid_size' => 2
+        ) ); ?>
     </div>
 </section><!--b-personal-->
 

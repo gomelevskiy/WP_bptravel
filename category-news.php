@@ -22,14 +22,14 @@
         <div class="col-md-12 col-xs-12">
             <div class="b-blog__posts">
 
-                <?php $i = 0; $id = 12;
+                <?php $i = 0; $id=12; $paged = get_query_var( 'paged', 1 ); $count_items = 12;
                 $arg_posts =  array(
                     'orderby'      => 'modified',
                     'order'        => 'ASC',
                     'cat' => $id,
-                    'showposts'=>$n
+//                            'showposts'=>$n
                 );
-                $recent = new WP_Query($arg_posts);
+                $recent = new WP_Query( "cat=$id&posts_per_page=$count_items&paged=$paged" );
 
                 while($recent->have_posts()) : $recent->the_post(); ?>
 

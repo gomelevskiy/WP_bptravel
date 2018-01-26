@@ -17,19 +17,19 @@
         <div class="row">
             <div class="col-md-3 col-xs-6">
                 <aside class="b-info__aside wow zoomInLeft" data-wow-delay="0.3s">
-                    <article class="b-info__aside-article">
-                        <h3>Office hours</h3>
-                        <div class="b-info__aside-article-item">
-                            <h6></h6>
-                            <p>Mon-Fr : 10:00am - 8:00pm<br />
-                                Sat, Sunday is closed</p>
-                        </div>
-                        <div class="b-info__aside-article-item">
-                            <h6>Firma</h6>
-                            <p>Mon-Fr : 10:00am - 8:00pm<br />
-                                Sat, Sunday is closed</p>
-                        </div>
-                    </article>
+<!--                    <article class="b-info__aside-article">-->
+<!--                        <h3>Office hours</h3>-->
+<!--                        <div class="b-info__aside-article-item">-->
+<!--                            <h6></h6>-->
+<!--                            <p>Mon-Fr : 10:00am - 8:00pm<br />-->
+<!--                                Sat, Sunday is closed</p>-->
+<!--                        </div>-->
+<!--                        <div class="b-info__aside-article-item">-->
+<!--                            <h6>Firma</h6>-->
+<!--                            <p>Mon-Fr : 10:00am - 8:00pm<br />-->
+<!--                                Sat, Sunday is closed</p>-->
+<!--                        </div>-->
+<!--                    </article>-->
                     <article class="b-info__aside-article">
                         <h3>О НАС</h3>
                         <?php
@@ -81,6 +81,10 @@
                         <span class="fa fa-envelope"></span>
                         <em>Email: <?php the_field('email',6); ?></em>
                     </div>
+                  	<div class="b-info__contacts-item">
+                        <span class="fa fa-fax"></span>
+                        <em>Факс: <?php the_field('fax',6); ?></em>
+                    </div>
                 </address>
                 <address class="b-info__map">
                     <a href="/kontakty/">Наши туры на карте</a>
@@ -101,7 +105,48 @@
         </div>
         <div class="col-xs-7">
             <div class="b-footer__content wow fadeInRight" data-wow-delay="0.3s">
-                <?php the_field('metrika',6); ?>
+
+                <script type="text/javascript" src="https://russiatourism.ru/operators/widget/js/widget.js"></script></p><p><!-- Russiatourism.ru Widget --><div id="russiatourism_widget" style="text-align: right;"> </div><script type="text/javascript">
+                    RT.Widget.build('%D0%A0%D0%A2%D0%9E+016823');
+                </script><!-- Yandex.Metrika counter --><script type="text/javascript" >
+                    (function (d, w, c) {
+                        (w[c] = w[c] || []).push(function() {
+                            try {
+                                w.yaCounter46691787 = new Ya.Metrika({
+                                    id:46691787,
+                                    clickmap:true,
+                                    trackLinks:true,
+                                    accurateTrackBounce:true,
+                                    webvisor:true
+                                });
+                            } catch(e) { }
+                        });
+
+                        var n = d.getElementsByTagName("script")[0],
+                            s = d.createElement("script"),
+                            f = function () { n.parentNode.insertBefore(s, n); };
+                        s.type = "text/javascript";
+                        s.async = true;
+                        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                        if (w.opera == "[object Opera]") {
+                            d.addEventListener("DOMContentLoaded", f, false);
+                        } else { f(); }
+                    })(document, window, "yandex_metrika_callbacks");
+                </script><noscript></p>
+                    <div><img src="https://mc.yandex.ru/watch/46691787" style="position:absolute; left:-9999px;" alt="" /></div>
+                </noscript><!-- /Yandex.Metrika counter -->
+                <!--LiveInternet counter--><script type="text/javascript">
+                    document.write("<a href='//www.liveinternet.ru/click' "+
+                        "target=_blank><img src='//counter.yadro.ru/hit?t57.6;r"+
+                        escape(document.referrer)+((typeof(screen)=="undefined")?"":
+                            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+                        ";h"+escape(document.title.substring(0,150))+";"+Math.random()+
+                        "' alt='' title='LiveInternet' "+
+                        "border='0' width='88' height='31'><\/a>")
+                </script><!--/LiveInternet-->
+
                 <div class="b-footer__content-social">
                     <?php if( get_field('vk',6) ): ?>
                         <a href="<?php the_field('vk',6); ?>"><span class="fa fa-vk sq-custom"></span></a>
@@ -116,6 +161,7 @@
                         <a href="<?php the_field('tripadvisor',6); ?>"><span class="fa fa-tripadvisor sq-custom"></span></a>
                     <?php endif; ?>
                 </div>
+
                 <nav class="b-footer__content-nav">
                     <?php wp_nav_menu( array(
                         'theme_location' => 'footer-menu',
